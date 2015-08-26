@@ -1,0 +1,9 @@
+{
+  "name": "workshop-angular",
+  "version": "0.0.1",
+  "authors": [
+    "Guilherme Cabrini da Silva <s2it_gsilva@uolinc.com>"
+  ],
+  "description": "Workshop de angular",
+  "license": "MIT"
+}
