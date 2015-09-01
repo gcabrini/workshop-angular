@@ -2,8 +2,7 @@
     ng.module('app')
         .controller('PersonCtrl', PersonController);
 
-    /* @ngInject */
-    function PersonController(personService) {
+    function PersonController(config, personService) {
         var vm = this,
             person = { name: '', lastName: '' };
 
@@ -27,6 +26,6 @@
         }
     }
 
-    PersonController.$inject = ['PersonService'];
+    PersonController.$inject = ['config', 'PersonService'];
 
 })(angular);

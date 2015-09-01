@@ -1,6 +1,6 @@
 (function(ng) {
 
-    ng.module('app', [])
+    ng.module('app')
         .service('PersonService',  PersonService);
 
     function PersonService() {
