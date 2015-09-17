@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Exemplo 7</title>
+    <!-- STYLESHEET -->
+    <link rel="stylesheet" href="app.css">
+    <!-- SCRIPTS -->
+    <script type="text/javascript" src="app.js"></script>
+</head>
+<body>
+    <section ng-controller="PersonCtrl as vm">
+        <h1>Exemplo 7</h1>
+
+        <!-- INSERIR -->
+        <div class="person-insert" ng-include=" VIEW_PATH +'/person/insert.view.html'"></div>
+        <!-- LISTA -->
+        <div class="person-list" ng-include=" VIEW_PATH +'/person/list.view.html'"></div>
+    </section>
+</body>
+</html>

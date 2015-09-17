@@ -1,0 +1,35 @@
+<form class="person-search">
+    <input type="text" name="busca" ng-model="q" placeholder="Digite para filtrar..."/>
+</form>
+
+<table class="person-list">
+    <thead>
+        <tr>
+            <th><a href="#" ng-click="order='name'" title="Ordernar por Nome">Nome</a></th>
+            <th><a href="#" ng-click="order='lastName'" title="Ordernar por Sobrenome">Sobrenome</a></th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="
+            p in vm.persons |
+            filter: q |
+            orderBy: vm.order as results" class="{{ $even ? 'even' : 'odd' }}">
+            <td title="Nome">{{ p.name }}</td>
+            <td title="Sobrenome">{{ p.lastName }}</td>
+            <td title="Ações">
+                <a href="#" ng-click="vm.excluir(p)">Excluir</a>
+            </td>
+        </tr>
+        <tr ng-if="results.length === 0">
+            <td colspan="3">Sem registros.</td>
+        </tr>
+    </tbody>
+    <tfoot ng-if="results.length > 0">
+        <tr>
+            <td colspan="3">
+                Total de registros: {{ results.length }}
+            </td>
+        </tr>
+    </tfoot>
+</table>
