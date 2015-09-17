@@ -1,0 +1,19 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "Api",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prestart": "npm install",
+    "start": "nodemon ./bin/www"
+  },
+  "author": "RenanJPaula - https://github.com/RenanJPaula/live-mean-stack",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.12.3",
+    "cors": "^2.7.1",
+    "express": "^4.12.3",
+    "mongoose": "^4.0.2"
+  }
+}
