@@ -3,10 +3,10 @@
     ng.module('app')
         .service('PersonService',  PersonService);
 
-    PersonService.$inject = ['$http'];
+    PersonService.$inject = ['$http', 'Utils'];
 
-    function PersonService($http) {
-        this.apiEndpoint = 'http://localhost:3000/api/v1/clients/';
+    function PersonService($http, Utils) {
+        this.apiEndpoint = Utils.localUrl + '/api/v1/clients/';
         this.fetchAll = fetchAll;
         this.save = save;
         this.remove = remove;

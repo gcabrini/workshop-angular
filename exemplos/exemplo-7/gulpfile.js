@@ -23,6 +23,7 @@ var config = {
         '../lib/angular-1.3.15/js/angular.min.js',
         'src/assets/js/*.js',
         'src/app/*.module.js',
+        'src/app/commons/**/*.js',
         'src/app/components/**/*.service.js',
         'src/app/components/**/*.controller.js'
     ],

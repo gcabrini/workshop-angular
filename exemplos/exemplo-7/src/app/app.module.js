@@ -10,6 +10,7 @@
             $rootScope.VIEW_PATH = config.VIEW_PATH;
         }])
         .config(['$httpProvider', function($httpProvider) {
+            $httpProvider.interceptors.push("RequestInterceptor");
             //$httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
         }]);
 })(angular);
