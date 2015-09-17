@@ -25,6 +25,7 @@ router.get('/:id', function(req, res) {
 });
 
 router.post('/', function(req, res) {
+	console.log(req.body);
 	var client = new Client(req.body);
 
 	client.save(function(err, data) {
