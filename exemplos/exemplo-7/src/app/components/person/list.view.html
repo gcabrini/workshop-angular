@@ -14,7 +14,7 @@
         <tr ng-repeat="
             p in vm.persons |
             filter: q |
-            orderBy: vm.order as results" class="{{ $even ? 'even' : 'odd' }}">
+            orderBy: order as results" class="{{ $even ? 'even' : 'odd' }}">
             <td title="Nome">{{ p.name }}</td>
             <td title="Sobrenome">{{ p.lastName }}</td>
             <td title="Ações">
