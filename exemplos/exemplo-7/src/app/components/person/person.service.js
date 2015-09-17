@@ -19,7 +19,10 @@
             if (p._id) {
                 return $http.put(this.apiEndpoint + p._id, p);
             } else {
-                return $http.post(this.apiEndpoint, p);
+                return $http.post(this.apiEndpoint, {
+                    'name': p.name,
+                    'lastName': p.lastName
+                });
             }
         }
 

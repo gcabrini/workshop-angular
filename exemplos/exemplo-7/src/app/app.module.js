@@ -8,5 +8,8 @@
         .constant('config', config)
         .run(['$rootScope', function($rootScope) {
             $rootScope.VIEW_PATH = config.VIEW_PATH;
+        }])
+        .config(['$httpProvider', function($httpProvider) {
+            //$httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
         }]);
 })(angular);

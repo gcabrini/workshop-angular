@@ -9,7 +9,8 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     minifyCss = require('gulp-minify-css'),
     minifyHTML = require('gulp-minify-html'),
-    livereload = require('gulp-livereload');
+    livereload = require('gulp-livereload'),
+    webserver = require('gulp-webserver');
 
 /********************************************
 ** CONFIGS
@@ -18,6 +19,7 @@ var config = {
     DIST_PATH: './dist/',
     INDEX_HTML: 'src/index.html',
     JS_FILES: [
+        'bower_components/jquery/dist/jquery.min.js',
         '../lib/angular-1.3.15/js/angular.min.js',
         'src/assets/js/*.js',
         'src/app/*.module.js',
@@ -37,11 +39,21 @@ var config = {
 ********************************************/
 // Default Task
 gulp.task('default', ['js', 'css', 'html'], function() {
-    gulp.start('watch');
+    gulp.start(['watch', 'webserver']);
 });
 
 // Deploy Task
 gulp.task('deploy', ['js-dist', 'css-dist', 'html-dist']);
+
+// Webserver
+gulp.task('webserver', function() {
+  gulp.src('./dist/')
+    .pipe(webserver({
+      livereload: true,
+      open: true,
+      fallback: 'index.html'
+    }));
+});
 
 // Watch Task
 gulp.task('watch', function() {
